@@ -1,12 +1,33 @@
-/*=
-name: Interface
-description: Interfaces for Class to ensure the implementation of certain properties
-authors: Christoph Pojer, Luis Merino
-=*/
+/*
+---
+description: Interfaces for Class to ensure certain properties are defined
+
+authors:
+  - Christoph Pojer
+  - Luis Merino
+
+requires:
+  core/1.3.0:
+    - Core
+    - Type
+    - typeOf
+    - instanceOf
+    - Class
+
+provides:
+  - Interface
+
+license:
+  MIT-style license
+
+version:
+  0.1
+...
+*/
 
 (function(context){
 
-var Moo = require('../../mootools-core/Source/MooTools'),
+var Moo = (typeof require != 'undefined') ? require('MooTools') : this,
 	Type = Moo.Type,
 	Class = Moo.Class,
 	typeOf = Moo.typeOf,
@@ -40,12 +61,14 @@ Class.Mutators.initialize = function(fn){
 				if (!(key in this)) throw new Error('Instance does not implement "' + key + '"');
 				
 				var item = this[key],
-					object = iface[key],
-					type = typeOf(item),
-					oType = typeOf(object);
+					object = iface[key];
 				
 				if (object == nil) continue;
 				
+				var type = typeOf(item),
+					oType = typeOf(object);
+				
+				// Needs to be same datatype OR instance of the provided object
 				if (type != oType && !instanceOf(item, object)){
 					var proto = object.prototype,
 						name = (proto && proto.$family) ? proto.$family().capitalize() : object.displayName;
@@ -53,7 +76,7 @@ Class.Mutators.initialize = function(fn){
 				}
 				
 				if (oType == 'function' && object != nil && item.$origin.length < object.length)
-					throw new Error('Property "' + key + '" does not implement at least ' + object.length + ' parameters');
+					throw new Error('Property "' + key + '" does not implement at least ' + object.length + ' parameter' + (object.length != 1 ? 's' : ''));
 			}
 		}
 

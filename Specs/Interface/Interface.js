@@ -1,6 +1,6 @@
 (function(){
 
-var Moo = require('../../../../mootools-core-two/Source/MooTools'),
+var Moo = (typeof require != 'undefined') ? require('MooTools') : this,
 	Class = Moo.Class,
 	typeOf = Moo.typeOf,
 	nil = Moo.nil;
