@@ -2,3 +2,4 @@ name: Interface
 author: cpojer
 category: Native
 tags: [type, interface, class]
+demo: http://github.com/cpojer/mootools-interface/blob/master/Demos/Example.js
