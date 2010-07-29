@@ -1,5 +1,17 @@
-name: Interface
-author: cpojer
-category: Native
-tags: [type, interface, class]
-demo: http://github.com/cpojer/mootools-interface/blob/master/Demos/Example.js
+name: "Interface"
+
+exports: "interface.js"
+
+web: "[cpojer.net](http://cpojer.net)"
+
+description: "Interfaces for Class to ensure certain properties are defined."
+
+license: "[MIT License](http://mootools.net/license.txt)"
+
+copyright: "&copy; [Christoph Pojer](http://cpojer.net/)"
+
+author: "cpojer"
+authors: "[Christoph Pojer](http://cpojer.net)"
+
+sources:
+    - "Source/Interface.js"
