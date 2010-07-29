@@ -1,12 +1,5 @@
 (function(){
 
-var Moo = (typeof require != 'undefined') ? require('MooTools') : this,
-	Class = Moo.Class,
-	typeOf = Moo.typeOf,
-	nil = Moo.nil;
-
-var Interface = require('../Source/Interface').Interface;
-
 describe('Interfaces', function(){
 	it('should be of type interface', function(){
 		expect(typeOf(new Interface({}))).toEqual('interface');
@@ -225,11 +218,11 @@ describe('Interfaces', function(){
 
 	it('should allow any value as long as the property exists', function(){
 		[1, 'a', function(){}, ['a'], {a: 1}].each(function(v){
-			var ImplementsNilAsAnything = new Class({
+			var ImplementsNullAsAnything = new Class({
 
 				Interface: new Interface({
 
-					method: nil
+					method: null
 
 				}),
 
@@ -239,7 +232,7 @@ describe('Interfaces', function(){
 
 			});
 
-			new ImplementsNilAsAnything;
+			new ImplementsNullAsAnything;
 		});
 	});
 

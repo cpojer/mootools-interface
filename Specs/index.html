@@ -2,76 +2,23 @@
   "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  
-<script type="text/javascript" src="Jasmine/jasmine.js"></script>
-<script type="text/javascript" src="Jasmine/consolex.js"></script>
-<link rel="stylesheet" type="text/css" href="Jasmine/jasmine.css">
+  <title>MooTools Interface</title>
+  <link rel="stylesheet" type="text/css" href="Jasmine/jasmine.css">
+  <script type="text/javascript" src="Jasmine/jasmine.js"></script>
+  <script type="text/javascript" src="Jasmine/jasmine-html.js"></script>
 
-<script type="text/javascript" src="BrowserReporter.js"></script>
+  <script type="text/javascript" src="mootools-core.js"></script>
+  <script type="text/javascript" src="../Source/Interface.js"></script>
 
-<!-- MooTools -->
-<script src="../../mootools-core/Source/Core/Core.js" type="text/javascript"></script>
-
-<script src="../../mootools-core/Source/Types/Array.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Types/Function.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Types/Number.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Types/String.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Types/Hash.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Types/Event.js" type="text/javascript"></script>
-
-<script src="../../mootools-core/Source/Class/Class.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Class/Class.Extras.js" type="text/javascript"></script>
-
-<script src="../../mootools-core/Source/Browser/Browser.js" type="text/javascript"></script>
-
-<script src="../../mootools-core/Source/Slick/Slick.Parser.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Slick/Slick.Finder.js" type="text/javascript"></script>
-
-<script src="../../mootools-core/Source/Element/Element.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Element/Element.Event.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Element/Element.Style.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Element/Element.Dimensions.js" type="text/javascript"></script>
-
-<script src="../../mootools-core/Source/Utilities/Selectors.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Utilities/DomReady.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Utilities/JSON.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Utilities/Cookie.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Utilities/Swiff.js" type="text/javascript"></script>
-
-<script src="../../mootools-core/Source/Fx/Fx.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Fx/Fx.CSS.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Fx/Fx.Tween.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Fx/Fx.Morph.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Fx/Fx.Transitions.js" type="text/javascript"></script>
-
-<script src="../../mootools-core/Source/Request/Request.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Request/Request.HTML.js" type="text/javascript"></script>
-<script src="../../mootools-core/Source/Request/Request.JSON.js" type="text/javascript"></script>
-
-<script src="../Source/Interface.js" type="text/javascript"></script>
-
-<script src="JasmineHelpers.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-
-var Name = 'MooTools Interface';
-
-jasmine.include('./Interface/Interface.js', true);
-
-</script>
-
-<title>Unit-Tests for MooTools Interface</title>
+  <script type="text/javascript" src="Interface.js"></script>
 </head>
 <body>
-<h1 id="framework_name"><script>document.write(Name)</script></h1>
 <script type="text/javascript">
-
-var jasmineEnv = jasmine.getEnv();
-jasmineEnv.reporter = new jasmine.BrowserReporter();
-jasmineEnv.execute();
-
+window.onload = function(){
+  jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+  jasmine.getEnv().execute();
+};
 </script>
 </body>
 </html>
-
-
+  
