@@ -7,13 +7,18 @@ Only works with MooTools 1.3.0+.
 
 Checks *after* creating an instance of a MooTools Class.
 
+This Plugin is part of MooTools [PowerTools!](http://cpojer.net/PowerTools).
+
+* [Build PowerTools!](http://cpojer.net/PowerTools)
+* [Fork PowerTools!](https://github.com/cpojer/PowerTools)
+
 Build
 -----
 
 Build via [Packager](http://github.com/kamicane/packager), requires MooTools Core to be registered to Packager already
 
-	./packager register /path/to/interface
-	./packager build Interface/* > interface.js
+	packager register /path/to/interface
+	packager build Interface/* > interface.js
 
 How to use
 ----------
