@@ -37,6 +37,8 @@ Class.Mutators.initialize = function(fn){
 		if (!this.Interface) return result;
 
 		var interfaces = Array.from(this.Interface);
+        var pattern = /function [\s\S]*\(([\s\S]*)\)/, iParams =[], oParams=[];
+        
 		for (var i = 0; i < interfaces.length; i++){
 			var iface = interfaces[i];
 			for (var key in iface){
@@ -59,8 +61,12 @@ Class.Mutators.initialize = function(fn){
 					throw new Error('Property "' + key + '" is implemented but not an instance of ' + (name ? '"' + name + '"' : 'the expected type'));
 				}
 				
-				if (oType == 'function' && item.$origin.length < object.length)
-					throw new Error('Property "' + key + '" does not implement at least ' + object.length + ' parameter' + (object.length != 1 ? 's' : ''));
+				if (oType == 'function'){
+                    iParams = (iface+"").split(pattern)[1].split(',');
+                    oParams  = (object+"").split(pattern)[1].split(',');
+                    if (iParams.length > oParams.length) throw new Error('Property "' + key + '" does not implement at least ' + iParams.length + ' parameter' + (iParams.length != 1 ? 's' : ''));
+                }
+					
 			}
 		}
 
