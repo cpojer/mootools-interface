@@ -37,7 +37,7 @@ Class.Mutators.initialize = function(fn){
 		if (!this.Interface) return result;
 
 		var interfaces = Array.from(this.Interface);
-        var pattern = /function [\s\S]*\(([\s\S]*)\)/, iParams =[], oParams=[];
+        var pattern = /function [\s\S]*\(([\s\S]*)\)[\s]*\{/, iParams =[], oParams=[];
         
 		for (var i = 0; i < interfaces.length; i++){
 			var iface = interfaces[i];
