@@ -7,6 +7,8 @@ Only works with MooTools 1.3.0+.
 
 Checks *after* creating an instance of a MooTools Class.
 
+![Screenshot](http://cpojer.net/Logo/interface.png)
+
 This Plugin is part of MooTools [PowerTools!](http://cpojer.net/PowerTools).
 
 * [Build PowerTools!](http://cpojer.net/PowerTools)

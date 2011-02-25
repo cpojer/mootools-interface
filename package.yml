@@ -12,6 +12,8 @@ copyright: "&copy; [Christoph Pojer](http://cpojer.net/)"
 
 author: "cpojer"
 authors: "[Christoph Pojer](http://cpojer.net)"
+category: Native
+tags: [interface, typeOf, instanceOf]
 
 sources:
     - "Source/Interface.js"
